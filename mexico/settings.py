@@ -1,5 +1,6 @@
 # Scrapy settings for mexico project
-#
+from fake_useragent import UserAgent
+ua = UserAgent()
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
 #
@@ -14,10 +15,10 @@ NEWSPIDER_MODULE = "mexico.spiders"
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = "mexico (+http://www.yourdomain.com)"
+USER_AGENT = ua.random
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
