@@ -24,8 +24,8 @@ class HotelSpider(scrapy.Spider):
         print("Code:", country_code)
 
         # Step 7: Extract the total number of hotels
-        total_hotels_element = response.css('span.biGQs._P.pZUbB.KxBGd span.b')
-        number_of_hotels = total_hotels_element.css('::text').get().split()[0].replace(',', '')
+        total_hotels = response.css('span.biGQs._P.pZUbB.KxBGd span.b::text').get()
+        number_of_hotels = total_hotels.split()[0].replace(',', '') # change 2,867 to 2867
         print("The total number of hotels is:", number_of_hotels)
 
         # Calculate the number of pages
